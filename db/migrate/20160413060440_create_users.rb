@@ -13,8 +13,6 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.boolean :show_email
       t.boolean :show_phone
 
-
-
       t.timestamps
     end
   end
