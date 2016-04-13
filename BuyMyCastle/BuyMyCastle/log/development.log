@@ -1,0 +1,28 @@
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (984.9ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (346.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (47.7ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (46.9ms)[0m  [1m[34mSELECT GET_LOCK('2420449508753557155', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (150.8ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateUsers (20160413040651)
+  [1m[35m (262.6ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `username` varchar(255), `password` varchar(255), `email` varchar(255), `subscriptionID` int, `phone` int, `first_name` varchar(255), `last_name` varchar(255), `registerDate` date, `show_name` tinyint(1), `show_email` tinyint(1), `show_phone` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (17.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (67.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20160413040651')[0m
+  [1m[35m (46.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (24.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2016-04-13 04:56:08', '2016-04-13 04:56:08')[0m
+  [1m[35m (47.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT RELEASE_LOCK('2420449508753557155')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (22.0ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (15.7ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'BuyMyCastle_development'
+  AND fk.table_name = 'users'
+[0m
