@@ -4,8 +4,8 @@ class UserController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
-    if @user.save
+    @users = User.new(params[:user])
+    if @users.save
       flash[:notice] = "You signed up successfully"
       flash[:color]= "valid"
     else
@@ -25,10 +25,17 @@ class UserController < ApplicationController
   end
 
   def index
-    @user = User.all
+    @users = User.all
   end
 
   def show
-    @user = User.where(params[:username])
+    @users = User.where(params[:username])
   end
+
+  private
+
+  def user_params
+    params.require(:user).permit()
+  end
+
 end
