@@ -3,17 +3,19 @@ Rails.application.routes.draw do
 
   #get 'user/create'
 
-  post 'user/create' => 'user@create'
+  post 'user/create' => 'user#create'
 
-  get 'user/update'
+  patch 'user/update'
 
   get 'user/edit'
 
-  get 'user/destroy'
+  delete 'user/destroy'
 
   get 'user/index'
 
   get 'user/show'
+
+  resources :user
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
