@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   get 'user/new'
 
   get 'user/create'
+=======
+  get 'user/new' => 'user#new'
+
+  #get 'user/create'
+
+  post 'user/create' => 'user@create'
+>>>>>>> Basic_project
 
   get 'user/update'
 
