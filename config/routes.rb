@@ -1,25 +1,37 @@
 Rails.application.routes.draw do
 <<<<<<< HEAD
+<<<<<<< HEAD
   get 'user/new'
 
   get 'user/create'
 =======
   get 'user/new' => 'user#new'
-
-  #get 'user/create'
-
-  post 'user/create' => 'user@create'
+=======
+  root 'users#index'
 >>>>>>> Basic_project
 
-  get 'user/update'
+  get 'users/new' => 'users#new'
 
-  get 'user/edit'
+<<<<<<< HEAD
+  post 'user/create' => 'user@create'
+>>>>>>> Basic_project
+=======
+  get 'users/create'
+>>>>>>> Basic_project
 
-  get 'user/destroy'
+  post 'users/create' => 'users#create'
 
-  get 'user/index'
+  patch 'users/update'
 
-  get 'user/show'
+  get 'users/edit'
+
+  delete 'users/destroy'
+
+  get 'users/index'
+
+  get 'users/show'
+
+  resources :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
