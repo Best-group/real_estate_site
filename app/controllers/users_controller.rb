@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   def new
     @users = User.new
   end
@@ -7,7 +7,7 @@ class UserController < ApplicationController
     @users = User.new(user_params)
     respond_to do |format|
       if @users.save
-        format.html{ redirect_to users_url, notice: "User #{@users.username} was successfully created."}
+        format.html{ redirect_to user_url(@users), notice: "User #{@users.username} was successfully created."}
         format.json{ render action: 'show', status: :created, location: @users}
         @users.errors.full_messages
         flash[:notice] = "You signed up successfully"
@@ -39,13 +39,13 @@ class UserController < ApplicationController
   end
 
   def show
-    @users = User.find(params[:username])
+    @users = User.find(params[:id])
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password,:password_confirmation)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
 
 end

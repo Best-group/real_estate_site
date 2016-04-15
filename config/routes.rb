@@ -1,21 +1,23 @@
 Rails.application.routes.draw do
-  get 'user/new' => 'user#new'
+  root 'users#index'
 
-  #get 'user/create'
+  get 'users/new' => 'users#new'
 
-  post 'user/create' => 'user#create'
+  get 'users/create'
 
-  patch 'user/update'
+  post 'users/create' => 'users#create'
 
-  get 'user/edit'
+  patch 'users/update'
 
-  delete 'user/destroy'
+  get 'users/edit'
 
-  get 'user/index'
+  delete 'users/destroy'
 
-  get 'user/show'
+  get 'users/index'
 
-  resources :user
+  get 'users/show'
+
+  resources :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

@@ -14,20 +14,14 @@
 ActiveRecord::Schema.define(version: 20160414082627) do
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "username"
-    t.string   "password"
-    t.string   "email"
-    t.integer  "subscriptionID"
-    t.integer  "phone"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.date     "register_date"
-    t.boolean  "show_name"
-    t.boolean  "show_email"
-    t.boolean  "show_phone"
+    t.string   "username",        null: false
+    t.string   "email",           null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end
