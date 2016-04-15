@@ -10,14 +10,14 @@ class UsersController < ApplicationController
         format.html{ redirect_to user_url(@users), notice: "User #{@users.username} was successfully created."}
         format.json{ render action: 'show', status: :created, location: @users}
         @users.errors.full_messages
-        flash[:notice] = "You signed up successfully"
-        flash[:color]= "valid"
+        flash[:notice] = 'You signed up successfully'
+        flash[:color]= 'valid'
       else
         format.html {render action: 'new'}
         format.json{render json: @users.errors, status: :unprocessable_entity}
         @users.errors.full_messages
-        flash[:notice] = "Form is invalid"
-        flash[:color]= "invalid"
+        flash[:notice] = 'Form is invalid'
+        flash[:color]= 'invalid'
         #render 'new'
       end
     end
