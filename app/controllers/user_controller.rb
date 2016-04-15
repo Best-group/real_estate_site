@@ -5,14 +5,24 @@ class UserController < ApplicationController
 
   def create
     @users = User.new(user_params)
-    if @users.save
-      flash[:notice] = "You signed up successfully"
-      flash[:color]= "valid"
-    else
-      flash[:notice] = "Form is invalid"
-      flash[:color]= "invalid"
+    respond_to do |format|
+      if @users.save
+        format.html{ redirect_to users_url, notice: "User #{@users.username} was successfully created."}
+        format.json{ render action: 'show', status: :created, location: @users}
+        @users.errors.full_messages
+        flash[:notice] = "You signed up successfully"
+        flash[:color]= "valid"
+      else
+        format.html {render action: 'new'}
+        format.json{render json: @users.errors, status: :unprocessable_entity}
+        @users.errors.full_messages
+        flash[:notice] = "Form is invalid"
+        flash[:color]= "invalid"
+        #render 'new'
+      end
     end
-    render 'new'
+
+
   end
 
   def update
@@ -35,7 +45,7 @@ class UserController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password,:password_confirmation)
+    params.require(:user).permit(:username, :email, :password,:password_confirmation)
   end
 
 end
