@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160414082627) do
+ActiveRecord::Schema.define(version: 20160416083842) do
+
+  create_table "listings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "listingID"
+    t.string   "title"
+    t.integer  "duration"
+    t.integer  "suburbID"
+    t.string   "street"
+    t.string   "unit"
+    t.float    "price",       limit: 24
+    t.integer  "bedroom"
+    t.integer  "bathroom"
+    t.integer  "carports"
+    t.float    "land_size",   limit: 24
+    t.string   "description"
+    t.string   "typeID"
+    t.integer  "views"
+    t.boolean  "sold"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "user_id"
+  end
+
+  add_index "listings", ["user_id"], name: "index_listings_on_user_id", using: :btree
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "username",        null: false
@@ -24,4 +47,5 @@ ActiveRecord::Schema.define(version: 20160414082627) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
+  add_foreign_key "listings", "users"
 end
