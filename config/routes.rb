@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  match ':controller(/:action(/:id))', :via => :get
+
   get 'listings/new'
 
   get 'listings/create'
@@ -15,7 +17,7 @@ Rails.application.routes.draw do
 
   get 'search' => 'listings#show'
 
-  root 'users#index'
+  root 'listings#index'
 
   get 'users/new' => 'users#new'
 

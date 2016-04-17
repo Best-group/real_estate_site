@@ -12,8 +12,18 @@
   </head>
 
   <body>
+    <header>
+      <%= render :partial => 'layouts/navigation', :formats => [:html] %>
+    </header>
+    <br class="clearfix" />
+    <div id="main">
+      <div class="row">
+        <div class="large-12 column">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
 
-    <%= yield %>
 
   </body>
 </html>

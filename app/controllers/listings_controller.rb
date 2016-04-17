@@ -15,7 +15,7 @@ class ListingsController < ApplicationController
   end
 
   def index
-
+    @listings = Listing.order('created_at DESC').limit(5)
   end
 
   def show

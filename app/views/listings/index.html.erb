@@ -1,10 +1,62 @@
-<div class="row">
-  <div class="large-8 small-8 columns">
-    <%= form_tag search_listings_path, :method => :get do %>
-        <p>
-          <%= text_field_tag :query, params[:query] %> <%= submit_tag "Search!" %>
-        </p>
-    <% end %>
-  </div>
 
+<div class="row">
+  <div class="large-4 columns">
+    <form>
+      <div class="row collapse">
+        <div class="large-9 columns">
+          <input type="search" placeholder="search">
+        </div>
+        <div class="large-3 columns">
+          <span class="postfix"><i class="fi-magnifying-glass"></i></span>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
+
+
+
+<div class="row">
+
+
+
+  <%= form_tag search_listings_path, class: "medium-8 column", :method => :get do  %>
+      <%= text_field_tag :query, params[:query], class:"medium-8 column "  %><%= submit_tag "Search", class: 'button end' %>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="page-header">
+    <h1>Latest properties</h1>
+  </div>
+</div>
+
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Suburb</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @listings.each do |p| %>
+      <tr>
+        <td>
+          <%= p.title %>
+        </td>
+        <td>
+          <%= p.description %>
+        </td>
+        <td>
+          <%= p.price %>
+        </td>
+        <td>
+          <%= p.suburbID %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
