@@ -1,27 +1,20 @@
-
-<div class="row">
-  <div class="large-4 columns">
-    <form>
-      <div class="row collapse">
-        <div class="large-9 columns">
-          <input type="search" placeholder="search">
-        </div>
-        <div class="large-3 columns">
-          <span class="postfix"><i class="fi-magnifying-glass"></i></span>
-        </div>
-      </div>
-    </form>
+ <form class="row collapse" action="/listings/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+  <div class="large-8 small-9 columns">
+    <input type="text" name="query" id="query">
   </div>
-</div>
-
-
+   <div class="large-4 small-3 columns">
+     <input type="submit" name="commit" value="Search" class="alert button expand float-left" data-disable-with="Search">
+   </div>
+ </form>
 
 <div class="row">
-
-
-
-  <%= form_tag search_listings_path, class: "medium-8 column", :method => :get do  %>
-      <%= text_field_tag :query, params[:query], class:"medium-8 column "  %><%= submit_tag "Search", class: 'button end' %>
+  <%= form_tag search_listings_path, class: "row collapse", :method => :get do  %>
+      <div class="large-8 small-9 columns">
+        <%= text_field_tag :query, params[:query] %>
+      </div>
+      <div class="large-4 small-3 columns">
+        <%= submit_tag "Search" , class: 'button' %>
+      </div>
   <% end %>
 </div>
 
