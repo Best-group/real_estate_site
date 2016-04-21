@@ -4,6 +4,8 @@ class Listing < ApplicationRecord
   searchable do
     text :title, :default_boost => 2
     text :description
+    text :unit
+    text :street
   end
 
 end
