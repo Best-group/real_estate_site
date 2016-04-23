@@ -6,7 +6,7 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-    <%= stylesheet_link_tag 'application' %>
+    <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
@@ -15,12 +15,17 @@
     <header>
       <%= render :partial => 'layouts/navigation', :formats => [:html] %>
     </header>
-
+    <br class="clearfix" />
     <div id="main">
+      <div class="row">
+        <div class="large-12 column">
           <%= yield %>
-      <br class="clearfix" />
+        </div>
+      </div>
     </div>
 
 
   </body>
+</html>
+
 </html>

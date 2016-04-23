@@ -1,27 +1,86 @@
 <% provide(:title, 'Sign Up') %>
-<h1> Sign Up</h1>
 
 
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+
+<div class="row user-signup-form">
+  <div class="large-9 large-offset-3 columns">
+    <h1> Sign Up</h1>
     <%= form_for @users do |f| %>
         <% if @users.errors.any? %>
-            <div class="error_explantion">
-              <h2><%= pluralize(@users.errors.count, "error") %></h2>
+           
+        <% end %>
+        <div class="row user-signup-form">
+          <div class="large-9 columns">
+            Name: <%= f.text_field :username %>
+            <% if not @users.errors["username"].empty? %>
+              <p class="error-msg-display">
+              Username 
+              <%=  @users.errors['username'].to_sentence %>
+              </p>
+            <% end %>
+          </div>
+          <!--<div class="large-3 columns error-msg-display">
+            <% if not @users.errors["username"].empty? %>
+              username 
+              <%=  @users.errors['username'].to_sentence %>
+            <% end %>
+          </div>-->
+        </div>
+        <div class="row user-signup-form">
+          <div class="large-9 columns">
+            Email: <%= f.text_field :email %>
+            <% if not @users.errors["email"].empty? %>
+              <p class="error-msg-display">
+              Email 
+              <%=  @users.errors['email'].to_sentence %>
+              </p>
+            <% end %>
+          </div>
+          
+        </div>
+        <div class="row user-signup-form">
+          <div class="large-9 columns">
+            Password: <%= f.password_field :password %>
+            <% if not @users.errors["password"].empty? %>
+              <p class="error-msg-display">
+              Password  
+              <%=  @users.errors['password'].to_sentence %>
+              </p>
+            <% end %>
+          </div>
+          
+        </div>
+        <div class="row user-signup-form">
+          <div class="large-9 columns">
+            Confirm Password: <%= f.password_field :password_confirmation %>
+            <% if not @users.errors["password_confirmation"].empty? %>
+              <p class="error-msg-display">
+              Confirm Password  
+              <%=  @users.errors['password_confirmation'].to_sentence %>
+              </p>
+            <% end %>
+          </div>
+          
+        </div>
+        <div class="row user-signup-form">
+          <div class="large-9 columns">
+            <%= f.submit "Join Us",  :class => "button" %>
+          </div>
+        </div>
+
+    <% end %>
+  </div>
+  <!--
+   <div class="large-3 columns error-msg-display">
+              <!--<h2><%= pluralize(@users.errors.count, "error") %></h2>
+             <%= @users.errors['emaill'].to_sentence %> 
+              <%= @users.errors.details.to_s %>
               <ul>
                 <% @users.errors.full_messages.each do |msg| %>
                   <li> <%= msg %></li>
                 <% end %>
               </ul>
             </div>
-        <% end %>
-        Name: <%= f.text_field :username %>
-        Email: <%= f.text_field :email %>
-        Password: <%= f.password_field :password %>
-        Password Confirmation: <%= f.password_field :password_confirmation %>
-        <%= f.submit "Submit" %>
-
-    <% end %>
-  </div>
+            -->
 </div>

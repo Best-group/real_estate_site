@@ -2,67 +2,46 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.banner
-{
-  width: 100%;
-  max-width: 100%;
-  background-image: url("Central_Perth_from_Kings_Park_1500px.jpg");
-  background-size: 1700px 600px;
-  background-repeat: no-repeat;
-  height: 30rem;
+@import 'fonts/ubuntu';
+
+.estate-logo{
+	color:white !important;
+	#estate-logo-a{
+		color:white;
+	}
+
+	.top-bar-left{
+		.logo{
+			width:44px;
+			float:left;
+		}
+		h1{
+			float:left;
+			font-size:1.8em;
+			font-family: 'ubunturegular';
+			vertical-align:baseline;
+			margin:0;
+			margin-top:13px;
+		}
+	}
 }
+.user-signup-form{
+	margin-bottom:15px;
+	.field_with_errors{
+		input{
+			//background-color:rgba(255,0,0,0.1);
+			border-color:red;
+			box-shadow:0px 0px 5px #f44;
+			margin-bottom:1px;
+		}
+	}
 
-.row_vertical_align
-{
- padding: 20rem 0rem 0rem;
- padding: 20rem 0rem 0rem;
+	.error-msg-display{
+		font-size:0.8em;
+		color:red;
+		padding-top:0px;
+		bottom:0;
+		height:100%;
+		margin:0;
+	}
 }
-
-// larger screen styles
-
-// some mobile resets
-
-.row_top_bar{
-  text-align: center;
-  background: #333333;
-}
-
-.topbar_menu
-{
-  width: 60rem;
-  margin: 0rem auto;
-  display: inline-block;
-}
-
-.center-buttons {
-  width: 10rem;
-}
-
-
-.top-bar.expanded {
-  background: #333333;
-}
-
-.top-bar-right {
-  width: 50%;
-  padding-left: 0rem;
-
-  ul {
-    float: left;
-  }
-}
-
-.top-bar-left {
-  width:  50%;
-  padding-right: 0rem;
-
-  ul {
-    float: right;
-  }
-}
-
-
-
-
-
-
