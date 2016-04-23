@@ -1,3 +1,18 @@
 // Place all the styles related to the listings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.banner
+{
+  width: 100%;
+  max-width: 100%;
+  background-image: url("Central_Perth_from_Kings_Park_1500px.jpg");
+  background-size: 1700px 600px;
+  background-repeat: no-repeat;
+  height: 30rem;
+}
+
+.row_vertical_align
+{
+  padding: 20rem 0rem 0rem;
+}
