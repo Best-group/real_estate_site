@@ -12,19 +12,28 @@
 
 	.top-bar-left{
 		.logo{
-			width:44px;
+			width: 25px;
 			float:left;
 		}
 		h1{
 			float:left;
-			font-size:1.8em;
+			font-size:1rem;
 			font-family: 'ubunturegular';
 			vertical-align:baseline;
 			margin:0;
 			margin-top:13px;
 		}
+
+
 	}
 }
+
+.top-bar-anchor
+{
+  font-family: 'ubunturegular';
+  font-size: 1.3rem;
+}
+
 .user-signup-form{
 	margin-bottom:15px;
 	.field_with_errors{
