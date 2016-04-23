@@ -7,8 +7,8 @@ class ListingsController < ApplicationController
     @listings = Listing.new(listing_params)
     respond_to do |format|
       if @listings.save
-        format.html{ redirect_to user_url(@listings), notice: "User #{@listings.username} was successfully created."}
-        format.json{ render action: 'show', status: :created, location: @listings}
+        format.html{ redirect_to @listings, notice: "User #{@listings.title} was successfully created."}
+        format.json{ render action: 'display', status: :created, location: @listings}
         @listings.errors.full_messages
         flash[:notice] = 'You signed up successfully'
         flash[:color]= 'valid'
@@ -48,6 +48,10 @@ class ListingsController < ApplicationController
     end
   end
 
+  def display
+    @listings = Listing.find(params[:id])
+  end
+
   def search
     @listings = Listing.search do
       keywords params[:query]
@@ -62,6 +66,6 @@ class ListingsController < ApplicationController
   protected
 
   def listing_params
-    params.require(:listing).permit()
+    params.require(:listing).permit(:title, :suburbID, :street, :unit, :price, :bedroom, :bathroom, :carports, :land_size, :description, :typeID, :userID)
   end
 end

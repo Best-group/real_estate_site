@@ -1,25 +1,33 @@
 <% provide(:title, 'Sign Up') %>
-<h1> Sign Up</h1>
+<h1> Listing </h1>
 
 
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for @users do |f| %>
-        <% if @users.errors.any? %>
+    <%= form_for @listings do |f| %>
+        <% if @listings.errors.any? %>
             <div class="error_explantion">
-              <h2><%= pluralize(@users.errors.count, "error") %></h2>
+              <h2><%= pluralize(@listings.errors.count, "error") %></h2>
               <ul>
-                <% @users.errors.full_messages.each do |msg| %>
+                <% @listings.errors.full_messages.each do |msg| %>
                     <li> <%= msg %></li>
                 <% end %>
               </ul>
             </div>
         <% end %>
-        Name: <%= f.text_field :username %>
-        Email: <%= f.text_field :email %>
-        Password: <%= f.password_field :password %>
-        Password Confirmation: <%= f.password_field :password_confirmation %>
+        <%= f.input :listing_id, :type => :hidden %>
+        Title: <%= f.text_field :title %>
+        Description: <%= f.text_field :description %>
+        Unit: <%= f.text_field :unit %>
+        Street: <%= f.text_field :street %>
+        Suburb: <%= f.text_field :suburbID %>
+        Price: <%= f.text_field :price %>
+        Bedroom: <%= f.text_field :bedroom %>
+        Bathroom: <%= f.text_field :bathroom %>
+        Carports: <%= f.text_field :carports %>
+        Land Size: <%= f.text_field :land_size %>
+
         <%= f.submit "Submit" %>
 
     <% end %>

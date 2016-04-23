@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  match ':controller(/:action(/:id))', :via => :get
+  #match ':controller(/:action(/:id))', :via => :get
 
   get 'listings/new'
 
@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'listings/index'
 
   get 'listings/show'
+
+  get 'listings/:id', to: 'listings#display'
 
   get 'search' => 'listings#show'
 
@@ -37,6 +39,8 @@ Rails.application.routes.draw do
 
   resources :users
   resources :listings do
+    post :display, on: :member
+
     collection do
       get :search
     end
