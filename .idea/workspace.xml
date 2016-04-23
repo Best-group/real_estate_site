@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9210b36-09ce-43a0-94d5-abe390278e43" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/listings.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/listings.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/listings/index.html.erb" afterPath="$PROJECT_DIR$/app/views/listings/index.html.erb" />
-    </list>
+    <list default="true" id="c9210b36-09ce-43a0-94d5-abe390278e43" name="Default" comment="" />
     <ignored path="BuyMyCastle.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -664,12 +660,12 @@
       <workItem from="1460480350495" duration="37392000" />
       <workItem from="1460691846233" duration="31263000" />
       <workItem from="1461059293045" duration="46954000" />
-      <workItem from="1461406063994" duration="10231000" />
+      <workItem from="1461406063994" duration="10705000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183196000" />
+    <option name="totallyTimeSpent" value="183670000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
