@@ -27,7 +27,9 @@
 
 	}
 }
-
+#main{
+	background-colour: black
+}
 .top-bar-anchor
 {
   font-family: 'ubunturegular';
@@ -54,4 +56,18 @@
 		margin:0;
 	}
 }
+.DOB {
+  width:15%;
+}
+.mobileNumber {
+  width:30%;
+}
+.streetNumber{
+	width:10%;
+}
+
+.postCode{
+	width:20%;
+}
+
 

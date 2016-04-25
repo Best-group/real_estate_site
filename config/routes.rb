@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get 'search' => 'listings#show'
 
   root 'listings#index'
+  
+  get 'users/details' => 'users#details'
 
   get 'users/new' => 'users#new'
 
