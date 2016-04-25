@@ -7,10 +7,10 @@ class ListingsController < ApplicationController
     @listings = Listing.new(listing_params)
     respond_to do |format|
       if @listings.save
-        format.html{ redirect_to @listings, notice: "User #{@listings.title} was successfully created."}
+        format.html{ redirect_to @listings, notice: "Listing #{@listings.title} was successfully created."}
         format.json{ render action: 'display', status: :created, location: @listings}
         @listings.errors.full_messages
-        flash[:notice] = 'You signed up successfully'
+        flash[:notice] = 'You listed successfully'
         flash[:color]= 'valid'
       else
         format.html {render action: 'new'}
