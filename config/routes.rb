@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'user_details/create'
+
+  get 'user_details/destroy'
+
+  get 'user_details/edit'
+
+  get 'user_details/index'
+
+  get 'user_details/new'
+
+  get 'user_details/show'
+
+  get 'user_details/update'
+
   #match ':controller(/:action(/:id))', :via => :get
 
   get 'listings/new'
