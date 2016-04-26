@@ -1,0 +1,71 @@
+
+<div class="banner">
+  <div class="row_vertical_align">
+    <form class="row collapse" action="/searches/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+      <div class="large-2 column">
+        <p> </p>
+      </div>
+      <div class="large-6 column end">
+        <input type="text" name="query" id="query">
+      </div>
+      <div class="large-2 columns">
+        <input type="submit" name="commit" value="Search" class="button expand float-left" data-disable-with="Search">
+      </div>
+      <div class="large-2 column">
+        <p> </p>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<!--
+<div class="row">
+  <%= form_tag search_searches_path, class: "row collapse", :method => :get do  %>
+      <div class="large-8 small-9 columns">
+        <%= text_field_tag :query, params[:query] %>
+      </div>
+      <div class="large-4 small-3 columns">
+        <%= submit_tag "Search" , class: 'button' %>
+      </div>
+  <% end %>
+</div>-->
+
+<div class="row">
+  <div class="large-12 column page-header">
+    <h1>Latest properties</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 column">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Suburb</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @listings.each do |p| %>
+          <tr>
+            <td>
+              <%= p.title %>
+            </td>
+            <td>
+              <%= p.description %>
+            </td>
+            <td>
+              <%= p.price %>
+            </td>
+            <td>
+              <%= p.suburbID %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
