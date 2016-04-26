@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160416083842) do
+ActiveRecord::Schema.define(version: 20160426050954) do
 
   create_table "listings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "listingID"
@@ -35,6 +35,19 @@ ActiveRecord::Schema.define(version: 20160416083842) do
   end
 
   add_index "listings", ["user_id"], name: "index_listings_on_user_id", using: :btree
+
+  create_table "user_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "surname"
+    t.string   "phone"
+    t.datetime "DOB"
+    t.string   "register_date"
+    t.boolean  "show_name"
+    t.boolean  "show_email"
+    t.boolean  "show_phone"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "username",        null: false

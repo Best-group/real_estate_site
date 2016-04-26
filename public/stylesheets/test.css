@@ -1,0 +1,59 @@
+.clearfloat{
+font-size:0px;
+margin:0px;
+padding:0px;
+float:right;
+height:0px;
+width:0px;
+border:0px none;
+line-height:0px;
+clear:both;
+}
+<%= stylesheet_link_tag "test.css" %>
+body{
+	margin:0px auto;
+}
+
+#outer{
+	margin:5px auto;
+	padding:5px;
+	text-align:center;
+	width:1080px;
+}
+header{
+	height:100px;
+	margin: 1%;
+}
+#main{ 
+	margin: 6px;
+	padding: 10px;
+}
+.DOB {
+  width:5%;
+}
+.mobileNumber {
+  width:20%;
+}
+.firstName{
+	width:15%;
+}
+.lastName{
+	width:15%;
+}
+.streetNumber{
+	width:5%;
+}
+.address{
+	width:30%;
+}
+.postCode{
+	width:10%;
+}
+footer{
+	height:120px;
+	margin: 6px;
+	padding: 0px;
+}
+#enter{
+text-align: center;
+}
