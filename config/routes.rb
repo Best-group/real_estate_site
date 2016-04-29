@@ -1,4 +1,33 @@
 Rails.application.routes.draw do
+
+  get 'searches/create'
+
+  get 'searches/destroy'
+
+  get 'searches/edit'
+
+  get 'searches/index'
+
+  get 'searches/new'
+
+  get 'searches/show'
+
+  get 'searches/update'
+
+  get 'user_details/create'
+
+  get 'user_details/destroy'
+
+  get 'user_details/edit'
+
+  get 'user_details/index'
+
+  get 'user_details/new'
+
+  get 'user_details/show'
+
+  get 'user_details/update'
+
   #match ':controller(/:action(/:id))', :via => :get
 
   get 'listings/new'
@@ -15,11 +44,9 @@ Rails.application.routes.draw do
 
   get 'listings/show'
 
-  get 'listings/:id', to: 'listings#display'
+  get 'search' => 'searches#show'
 
-  get 'search' => 'listings#show'
-
-  root 'listings#index'
+  root 'searches#index'
   
   get 'users/details' => 'users#details'
 
@@ -40,13 +67,18 @@ Rails.application.routes.draw do
   get 'users/show'
 
   resources :users
-  resources :listings do
-    post :display, on: :member
 
+  resources :listings
+
+  #post :display, on: :member
+
+  resources :searches do
     collection do
       get :search
     end
   end
+
+  #get 'listings/:id', to: 'listings#display'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
