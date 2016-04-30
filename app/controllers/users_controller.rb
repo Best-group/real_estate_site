@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  #before_filter :authenticate_user!
+
   def new
     @users = User.new
   end
@@ -9,6 +11,7 @@ class UsersController < ApplicationController
       if @users.save
         format.html{ redirect_to user_url(@users), notice: "User #{@users.username} was successfully created."}
         format.json{ render action: 'show', status: :created, location: @users}
+        UserMailer.welcomeUser(@users).deliver
         @users.errors.full_messages
         flash[:notice] = 'You signed up successfully'
         flash[:color]= 'valid'
@@ -39,7 +42,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @users = User.find(params[:id])
+    @users = User.find(params[:confirmation_token])
   end
 
   private

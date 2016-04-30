@@ -1,5 +1,5 @@
 class CreateUserDetails < ActiveRecord::Migration[5.0]
-  def change
+  def up
     create_table :user_details do |t|
       t.string :name
       t.string :surname
@@ -12,4 +12,9 @@ class CreateUserDetails < ActiveRecord::Migration[5.0]
       t.timestamps
     end
   end
+
+  def down
+    drop_table :user_details
+  end
+
 end

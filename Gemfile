@@ -56,4 +56,10 @@ gem 'sunspot_solr'
 
 gem 'progress_bar'
 
+gem 'devise'
+
+#gem 'mailcatcher'
+
+#gem 'actionmailer'
+
 

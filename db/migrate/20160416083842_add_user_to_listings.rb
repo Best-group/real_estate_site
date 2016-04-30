@@ -4,6 +4,6 @@ class AddUserToListings < ActiveRecord::Migration[5.0]
   end
 
   def down
-    remove_foreign_key :listings, :user, foreign_key: false
+    remove_foreign_key :listings, :users
   end
 end
