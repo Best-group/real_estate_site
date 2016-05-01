@@ -1,8 +1,13 @@
 class ListingsController < ApplicationController
+  #forcing devise authentication
+  before_action :authenticate_user!
+
+  #creating a new listing object
   def new
     @listings = Listing.new
   end
 
+  #method add listing object to database
   def create
     @listings = Listing.new(listing_params)
     respond_to do |format|
@@ -37,8 +42,9 @@ class ListingsController < ApplicationController
 
   end
 
+  #display the result of listing addition
   def show
-    @listings = Listing.find(params[:id])
+    @listings = Listing.find_by(params[:id])
   end
 
   def display
@@ -47,7 +53,7 @@ class ListingsController < ApplicationController
 
 
   protected
-
+  #using strong parameters
   def listing_params
     params.require(:listing).permit(:title, :suburbID, :street, :unit, :price, :bedroom, :bathroom, :carports, :land_size, :description, :typeID, :userID)
   end

@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  userID: MyString
+  user_id: MyString
   title: MyString
   duration: 1
   suburbID: 1
@@ -10,9 +10,14 @@ one:
   price: 1.5
   bedroom: 1
   bathroom: 1
+  carports: 1
+  land_size: 12345.67
+  description: mystring
+  typeID: mystring
+
 
 two:
-  userID: MyString
+  user_id: MyString
   title: MyString
   duration: 1
   suburbID: 1
@@ -21,3 +26,7 @@ two:
   price: 1.5
   bedroom: 1
   bathroom: 1
+  carports: 1
+  land_size: 12345.67
+  description: mystring
+  typeID: mystring

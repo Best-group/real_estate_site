@@ -2,6 +2,10 @@
 
 one:
   username: MyString
+  email: mystring@foobar.com
+  encrypted_password: password
 
 two:
-  username: MyString
+  username: foobar
+  email: foobar@gmail.com
+  encrypted_password: foobar

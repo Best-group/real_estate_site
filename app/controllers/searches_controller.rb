@@ -1,4 +1,5 @@
 class SearchesController < ApplicationController
+
   def create
   end
 
@@ -8,6 +9,7 @@ class SearchesController < ApplicationController
   def edit
   end
 
+  #Create a listing of feature properties
   def index
     @listings = Listing.order('created_at DESC').limit(5)
   end
@@ -15,6 +17,7 @@ class SearchesController < ApplicationController
   def new
   end
 
+  #show the result of solr query
   def show
     @listings = Listing.search do
       keywords params[:query]
@@ -29,6 +32,7 @@ class SearchesController < ApplicationController
   def update
   end
 
+  #method to search listings
   def search
     @listings = Listing.search do
       keywords params[:query]
