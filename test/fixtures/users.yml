@@ -9,3 +9,8 @@ two:
   username: foobar
   email: foobar@gmail.com
   encrypted_password: foobar
+
+three:
+  username: admin
+  email: admin@foobar.com
+  encrypted_password: admin

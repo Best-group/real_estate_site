@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, :except => [:new, :create]
+  include Devise::Controllers::Helpers
+  before_filter :authenticate_user!, :except => [:new, :create]
 
   def new
     @users = User.new
@@ -29,9 +30,23 @@ class UsersController < ApplicationController
   end
 
   def update
+    @users = current_user
+    new_params = params.require(:user).permit(:email, :username, :current_password, :password, :password_confirmation)
+    #@users = User.find_by(params[:id])
+    if @users.update_with_password(new_params)
+      flash[:notice] = :updated
+      sign_in @users, :bypass => true
+      respond_to do |format|
+        format.html{redirect_to user_url(@users), notice: "User #{@users.username} was successfully changed."}
+      end
+
+    else
+      render 'edit'
+    end
   end
 
   def edit
+    @users = current_user
   end
 
   def destroy

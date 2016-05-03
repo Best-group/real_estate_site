@@ -66,11 +66,11 @@ Rails.application.routes.draw do
 
   get 'users/show'
 
+
+
   devise_for :users
 
   resources :users
-
-
 
   resources :listings
 
@@ -82,10 +82,9 @@ Rails.application.routes.draw do
     end
   end
 
+  #devise_scope :users do
+  #end
 
-  devise_scope :users do
-
-  end
   #get 'listings/:id', to: 'listings#display'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
