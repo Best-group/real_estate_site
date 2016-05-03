@@ -58,6 +58,8 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.6.0)
+    font-awesome-rails (4.6.1.0)
+      railties (>= 3.2, < 5.1)
     foundation-rails (6.2.1.0)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
@@ -74,6 +76,8 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    lightbox2-rails (2.8.2.1)
+      railties (>= 3.1)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -187,9 +191,11 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
   coffee-rails (~> 4.1.0)
+  font-awesome-rails
   foundation-rails
   jbuilder (~> 2.0)
   jquery-rails
+  lightbox2-rails
   mysql2 (>= 0.3.18, < 0.5)
   progress_bar
   puma

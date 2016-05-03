@@ -1,0 +1,15 @@
+<% provide(:title, "Log in") %>
+<div class="login_box">
+  <h1>Login</h1>
+  <div class="login_box_items">
+    <%= form_for(:session, url: login_path) do |f| %>
+      <label class="user_login_label fa fa-user" id="username_label"><%= f.text_field :username, class: 'user_login_input', title: 'Type your username', placeholder: "Username", autofocus: true %></label>
+      <label class="user_login_label fa fa-key" id="username_label"><%= f.password_field :password, class: 'user_login_input', title: 'Type your password', placeholder: "Password" %></label>
+      <%= f.submit "Log in", class: "login_button" %>
+      <%= f.label :remember_me do %>
+      <label class="login_remember_me"><%= f.check_box :remember_me %>Remember me</label>
+      <% end %>
+      <label class="login_new_user">Are you new here? <%= link_to "Sign up now!", '/users/new' %></label>
+    <% end %>
+  </div>
+</div>

@@ -1,27 +1,22 @@
 
-    <div class="top-bar estate-logo" id="estate-logo">
-      <div class="top-bar-left">
-        <a href="/index" id="estate-logo-a">
-          <%= image_tag("logo", class: "logo") %>
-          <h1>  buymycastle</h1>
-        </a>
-      </div>
-
-       <div class="large-6 large-offset-2 columns "  >
-        <ul class="menu large-12">
-         
-          <li class="large-3 columns"><a href="#" class="top-bar-anchor">Buy</a></li>
-          <li class="large-3 columns"><a href="#" class="top-bar-anchor">Rent</a></li>
-          <li class="large-3 columns"><a href="#" class="top-bar-anchor">Sold</a></li>
-          <li class="large-3 columns"><a href="#" class="top-bar-anchor">List yours</a></li>
+    <div class="main_top_bar" id="top_bar">
+      <%= link_to image_tag("logo", class: "logo") + "BuyMyCastle", root_path, class: "site_logo" %>
+        <ul class="main_menu">
+          <li class="main_menu_item"><a href="#" class="main_menu_anchor">Buy</a></li>
+          <li class="main_menu_item"><a href="#" class="main_menu_anchor">Rent</a></li>
+          <li class="main_menu_item"><a href="#" class="main_menu_anchor">Sold</a></li>
         </ul>
-      </div>
-
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li><a href="#" class="button">Login</a></li>
-          <li><a href="#" class="top-bar-anchor">Sign up</a></li>
+        <ul class="user_menu">
+          <% if logged_in? %>
+          <li class="logged_user"><%= link_to "Welcome #{current_user.username}", current_user, class: "logged_user_anchor" %>
+            <ul class="dropdown_user_menu">
+              <li class="dropped_items"><%= link_to "My Posts", '#', class: "dropped_items_anchor" %></li>
+              <li class="dropped_items"><%= link_to "Log out", logout_path, method: "delete", class: "dropped_items_anchor" %></li>
+            </ul>
+          </li>
+        <% else %>
+          <a href="/login", class="button_login" data-lightbox="Login">Log in</a>
+        <% end %>
         </ul>
-      </div>
     </div>
 

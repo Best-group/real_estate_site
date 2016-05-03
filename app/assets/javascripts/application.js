@@ -12,9 +12,10 @@
 //
 = require jquery
 = require jquery_ujs
-//= require foundation
+//= require bootstrap
 = require foundation
 = require turbolinks
  require_tree .
+//= require lightbox
 
 $(function(){ $(document).foundation(); });

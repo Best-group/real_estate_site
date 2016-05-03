@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426050954) do
+ActiveRecord::Schema.define(version: 20160429043230) do
 
   create_table "listings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "listingID"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20160426050954) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
+    t.string   "remember_digest"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

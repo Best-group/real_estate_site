@@ -56,4 +56,7 @@ gem 'sunspot_solr'
 
 gem 'progress_bar'
 
+gem "font-awesome-rails"
+
+gem 'lightbox2-rails'
 

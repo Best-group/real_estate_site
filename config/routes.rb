@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'user_login/new'
+
   get 'searches/create'
 
   get 'searches/destroy'
@@ -65,6 +67,12 @@ Rails.application.routes.draw do
   get 'users/index'
 
   get 'users/show'
+
+  get 'login'   => 'user_login#new'
+
+  post 'login'   => 'user_login#create'
+  
+  get 'logout'  => 'user_login#destroy'
 
   resources :users
 
