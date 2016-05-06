@@ -1,27 +1,49 @@
 
-    <div class="top-bar estate-logo" id="estate-logo">
-      <div class="top-bar-left">
-        <a href="/index" id="estate-logo-a">
+    <div class="top-bar estate-logo" id="estate-logo" data-topbar>
+
+    <div class="top-bar-left" data-responsive-toggle="nav_menu" data-hide-for="medium">
+          <button class="menu-icon" type="button" data-toggle></button>
+          <div class="title-bar-title">Menu</div>
+
+          <div class="title-bar-title  small-offset-3 nav_logo show-for-small-only" >
+            <a href="/index" id="estate-logo-a" class="right">
+              <%= image_tag("logo", class: "logo") %>
+              <h1>buymycastle</h1>
+            </a>
+          </div>
+        </div>
+
+      <div class="top-bar-title  nav_logo show-for-medium" >
+        <a href="/index" id="estate-logo-a" class="right">
           <%= image_tag("logo", class: "logo") %>
-          <h1>  buymycastle</h1>
+          <h1>buymycastle</h1>
         </a>
-      </div>
+        <div class="divider"></div>
+        
 
-       <div class="large-6 large-offset-2 columns "  >
-        <ul class="menu large-12">
+      </div>
+        
+      <div id="nav_menu">
+        <div class="top-bar-left large-offset-2 "  >
+          <ul class="dropdown menu vertical medium-horizontal " data-dropdown-menu>
          
-          <li class="large-3 columns"><a href="#" class="top-bar-anchor">Buy</a></li>
-          <li class="large-3 columns"><a href="#" class="top-bar-anchor">Rent</a></li>
-          <li class="large-3 columns"><a href="#" class="top-bar-anchor">Sold</a></li>
-          <li class="large-3 columns"><a href="#" class="top-bar-anchor">List yours</a></li>
-        </ul>
+            <li class="l"><a href="#" class="top-bar-anchor">Buy</a></li>
+            <li class="l"><a href="#" class="top-bar-anchor">Rent</a></li>
+            <li class=""><a href="#" class="top-bar-anchor">Sold</a></li>
+            <li class="l"><a href="#" class="top-bar-anchor">List yours</a></li>
+          </ul>
+        </div>
+
+        <div class="top-bar-right ">
+          <ul class="menu">
+            <li><a href="#" class="button">Login</a></li>
+            <!--<li><a href="#" class="top-bar-anchor">Sign up</a></li>-->
+          </ul>
+        </div>
       </div>
 
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li><a href="#" class="button">Login</a></li>
-          <li><a href="#" class="top-bar-anchor">Sign up</a></li>
-        </ul>
-      </div>
+
+      
+
     </div>
 
