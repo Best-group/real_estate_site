@@ -17,6 +17,7 @@
               </ul>
             </div>
         <% end %>
+        <%= f.hidden_field :user_id, :value => current_user.id.to_s %>
         Title: <%= f.text_field :title %>
         Description: <%= f.text_field :description %>
         Unit: <%= f.text_field :unit %>

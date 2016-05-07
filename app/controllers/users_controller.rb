@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   include Devise::Controllers::Helpers
-  before_filter :authenticate_user!, :except => [:new, :create]
+  #before_filter :authenticate_user!, :except => [:new, :create]
 
   def new
     @users = User.new
@@ -31,7 +31,6 @@ class UsersController < ApplicationController
 
   def update
     @users = current_user
-    new_params = params.require(:user).permit(:email, :username, :current_password, :password, :password_confirmation)
     #@users = User.find_by(params[:id])
     if @users.update_with_password(new_params)
       flash[:notice] = :updated
@@ -64,6 +63,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
+  end
+
+  def new_params
+    params.require(:user).permit(:email, :username, :current_password, :password, :password_confirmation)
   end
 
 end

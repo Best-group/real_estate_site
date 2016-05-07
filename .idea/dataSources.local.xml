@@ -5,5 +5,10 @@
       <user-name>root</user-name>
       <user-password>dfdedfcbdfccdfcfdf9bdf9edf9adf9bdf9bdf92df9c</user-password>
     </data-source>
+    <data-source name="Rails BuyMyCastle: test" uuid="fe789f66-9264-46af-9d53-59cc103b59c1">
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+      <user-password>dfdedfcbdfccdfcfdf9bdf9edf9adf9bdf9bdf92df9c</user-password>
+    </data-source>
   </component>
 </project>

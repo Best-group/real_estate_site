@@ -8,4 +8,6 @@ class Listing < ApplicationRecord
     text :street
   end
 
+  hash_as_id
+
 end
