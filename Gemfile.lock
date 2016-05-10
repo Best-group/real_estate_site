@@ -47,6 +47,7 @@ GEM
     bcrypt (3.1.11-x86-mingw32)
     builder (3.2.2)
     byebug (8.2.5)
+    cancancan (1.13.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -108,8 +109,6 @@ GEM
       highline (~> 1.6)
       options (~> 2.3.0)
     puma (3.4.0)
-    pundit (1.1.0)
-      activesupport (>= 3.0.0)
     rack (2.0.0.alpha)
       json
     rack-test (0.6.3)
@@ -143,6 +142,7 @@ GEM
     rake (11.1.2)
     responders (2.2.0)
       railties (>= 4.2.0, < 5.1)
+    rolify (5.1.0)
     rsolr (1.1.1)
       builder (>= 2.1.2)
     sass (3.4.22)
@@ -202,6 +202,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
+  cancancan
   coffee-rails (~> 4.1.0)
   devise
   foundation-rails
@@ -211,8 +212,8 @@ DEPENDENCIES
   mysql2 (>= 0.3.18, < 0.5)
   progress_bar
   puma
-  pundit
   rails (>= 5.0.0.beta3, < 5.1)
+  rolify
   sass-rails (~> 5.0)
   seed-fu
   sunspot_rails

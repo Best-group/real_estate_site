@@ -62,7 +62,11 @@ gem 'devise'
 
 #gem 'actionmailer'
 
-gem 'pundit'
+# gem 'pundit'
 
 gem 'hash_ids'
+
+gem 'rolify'
+
+gem 'cancancan'
 
