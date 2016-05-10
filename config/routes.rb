@@ -29,7 +29,9 @@ Rails.application.routes.draw do
   get 'user_details/show'
 
   get 'user_details/update'
-
+  
+  post 'user_details/new' => 'user_details#create'
+  
   #match ':controller(/:action(/:id))', :via => :get
 
   get 'listings/new'
@@ -74,6 +76,8 @@ Rails.application.routes.draw do
 
   resources :listings
 
+  resources :user_details
+  
   #post :display, on: :member
 
   resources :searches do

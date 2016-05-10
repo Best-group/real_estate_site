@@ -7,34 +7,40 @@
 <div class="row user-signup-form">
   <div class="large-9 large-offset-3 columns">
     <h1>User details</h1>
-    <%= form_for :details do |f| %>
-
+    <%= form_for @user_detail do |f| %>
+		</div>
+			</div>
 
         <div class="row user-signup-form">
           <div class="large-9 columns collapse">
-            First Name: <%= f.text_field :firstName, :class => "firstName" %>
-
-            Last Name: <%= f.text_field :lastName, :class => "lastName"  %>
-
-            mobile Number: <%= f.number_field :mobileNumber, :class => "mobileNumber" %>
-
-            DOB:<%= f.number_field :DOB, :class => "DOB" %><%= f.number_field :DOB, :class => "DOB" %><%= f.number_field :DOB, :class => "DOB" %>
-
-          </div>
+		  
+            First Name: <%= f.text_field :name, :class => "name" %>
+			
+			 </div>
         </div>
+			
+		<div class="row user-signup-form">
+          <div class="large-9 columns">	
 
-        <div class="row user-signup-form">
+            Last Name: <%= f.text_field :surname, :class => "surname"  %>
+		
+		 </div>
+        </div>
+		
+		<div class="row user-signup-form">
           <div class="large-9 columns">
 
-            Street Number: <%= f.number_field :streetNumber, :class => "streetNumber" %>
+            mobile Number: <%= f.number_field :phone, :class => "phone" %>
+			
+			 </div>
+        </div>
+			
+		<div class="row user-signup-form">
+          <div class="large-9 columns">
 
-            Address Line 1: <%= f.text_field :address, :class => "address" %>
+            DOB:<%= f.date_field :DOB, :class => "DOB" %>
 
-            Address Line 2: <%= f.text_field :address, :class => "address" %>
-
-            post code: <%= f.number_field :postCode, :class => "postCode" %>
           </div>
-
         </div>
 
         <div class="row user-signup-form">
@@ -42,6 +48,5 @@
             <%= f.submit "Submit",  :class => "button"  %>
           </div>
         </div>
-        </div>
-        </div>
+        
     <% end %>
