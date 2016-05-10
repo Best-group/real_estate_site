@@ -13,6 +13,36 @@
 
 ActiveRecord::Schema.define(version: 20160429063226) do
 
+  create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "userID",     null: false
+    t.integer  "listingID",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "listingID",                  null: false
+    t.integer  "order",                      null: false
+    t.string   "image_link",     limit: 100, null: false
+    t.string   "thumbnail_link", limit: 100, null: false
+    t.string   "caption",        limit: 30
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  create_table "linked_suburbs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "suburbID",    null: false
+    t.integer  "to_suburbID", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "listing_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "property_type", limit: 25, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "listings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "listingID"
     t.string   "title"
@@ -33,6 +63,33 @@ ActiveRecord::Schema.define(version: 20160429063226) do
     t.datetime "updated_at",             null: false
     t.integer  "user_id"
     t.index ["user_id"], name: "index_listings_on_user_id", using: :btree
+  end
+
+  create_table "subscription_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",            limit: 25, default: "",    null: false
+    t.integer  "months_duration",                            null: false
+    t.float    "value",           limit: 24,                 null: false
+    t.integer  "max_listings",                               null: false
+    t.integer  "max_images",                                 null: false
+    t.boolean  "private_options",            default: false, null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+  end
+
+  create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "userID",       null: false
+    t.integer  "type",         null: false
+    t.datetime "date_started", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "suburbs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       limit: 50, null: false
+    t.string   "state",      limit: 3,  null: false
+    t.integer  "postcode",              null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "user_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
