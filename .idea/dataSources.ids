@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<component name="dataSourceStorage">
-  <data-source name="Rails BuyMyCastle: development" uuid="49a3b1c1-dfb0-4156-8d1d-71bf3c4df33c">
-    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
-  </data-source>
-  <data-source name="Rails BuyMyCastle: test" uuid="fe789f66-9264-46af-9d53-59cc103b59c1">
-    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
-  </data-source>
-</component>
