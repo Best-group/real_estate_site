@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   include Devise::Controllers::Helpers
-  #before_filter :authenticate_user!, :except => [:new, :create]
+  before_filter :authenticate_user!, :except => [:new, :create]
+  load_and_authorize_resource
 
   def new
     @users = User.new
@@ -64,7 +65,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @users = User.find_by(params[:confirmation_token])
+    #@users = User.find(params[:confirmation_token])
+
+    @users = User.find(params[:id])
+    authorize! :show, @users
   end
 
   private

@@ -1,4 +1,6 @@
 class Listing < ApplicationRecord
+  resourcify
+
   belongs_to :user
 
   searchable do

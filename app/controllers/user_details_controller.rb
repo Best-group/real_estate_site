@@ -4,7 +4,7 @@ class UserDetailsController < ApplicationController
 	@user_detail = UserDetail.new(user_params)
 	
 	if @user_detail.save
-		puts "succse"
+		puts "success"
 	else
 		puts "fail"
 		end 
