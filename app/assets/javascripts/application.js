@@ -17,6 +17,8 @@
 //= require turbolinks
 //= require_tree .
 
+
+// this var ready stuff makes the foundation load code work with turbolinks
 var ready ;
 ready = function (){
 	$(function(){ $(document).foundation(); });
