@@ -1,4 +1,4 @@
-class UserPolicy < ApplicationPolicy
+class ListingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope
@@ -6,6 +6,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def write?
-    record.id == user.id
+    user && (record.user_id == user.id)
   end
+
 end

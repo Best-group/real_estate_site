@@ -68,5 +68,5 @@ gem 'hash_ids'
 
 gem 'rolify'
 
-#gem 'cancancan'
+gem 'cancancan'
 

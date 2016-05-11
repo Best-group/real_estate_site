@@ -1,37 +1,45 @@
 class ApplicationPolicy
-  attr_reader :users, :listing
+  attr_reader :user, :record
 
-  def initialize(user, listing)
-    @users = user
-    @listings = listing
+  def initialize(user, record)
+    @user = user
+    @record = record
+  end
+
+  def read?
+    true
+  end
+
+  def write?
+    false
   end
 
   def index?
-    false
+    read?
   end
 
   def show?
-    scope.where(:id => Listing.user_id).exists?
+    read?
   end
 
   def create?
-    false
+    write?
   end
 
   def new?
-    create?
+    write?
   end
 
   def update?
-    false
+    write?
   end
 
   def edit?
-    update?
+    write?
   end
 
   def destroy?
-    false
+    write?
   end
 
   def scope

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   include Devise::Controllers::Helpers
   before_filter :authenticate_user!, :except => [:new, :create]
-  load_and_authorize_resource
+  #load_and_authorize_resource
 
   def new
     @users = User.new
@@ -46,13 +46,15 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @users = current_user
+    @users = User.find(params[:id])
+    authorize @users
+    puts 'end'
   end
 
   def destroy
-    @user = User.find(current_user.id)
-    @user.is_active = 0
-    if @user.save
+    @users = User.find(current_user.id)
+    @users.is_active = 0
+    if @users.save
       sign_out @user
       redirect_to root_path
     else
@@ -68,7 +70,7 @@ class UsersController < ApplicationController
     #@users = User.find(params[:confirmation_token])
 
     @users = User.find(params[:id])
-    authorize! :show, @users
+    #authorize! :show, @users
   end
 
   private

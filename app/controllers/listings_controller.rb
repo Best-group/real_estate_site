@@ -1,15 +1,16 @@
 class ListingsController < ApplicationController
   #forcing devise authentication
-  #before_action :authenticate_user!
+  before_action :authenticate_user!
 
   #creating a new listing object
   def new
-    @listings = Listing.new
+    @listing = Listing.new
+    authorize @listing
   end
 
   #method add listing object to database
   def create
-    @listings = Listing.new(listing_params)
+    @listing = Listing.new(listing_params)
     respond_to do |format|
       if @listings.save
         format.html{ redirect_to @listings, notice: "Listing #{@listings.title} was successfully created."}
@@ -26,16 +27,22 @@ class ListingsController < ApplicationController
         #render 'new'
       end
     end
+    authorize @listing
 
   end
 
   def update
+    authorize @listing
   end
 
   def edit
+    @listing = Listing.find_by(params[:user_id])
+    authorize @listing
+
   end
 
   def destroy
+    authorize @listing
   end
 
   def index
@@ -45,6 +52,7 @@ class ListingsController < ApplicationController
   #display the result of listing addition
   def show
     @listings = Listing.find(params[:id])
+    authorize @listings
   end
 
   def display
