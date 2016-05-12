@@ -2,39 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import 'fonts/ubuntu';
 
-.estate-logo{
-	color:white !important;
-	#estate-logo-a{
-		color:white;
-	}
-
-	.top-bar-left{
-		.logo{
-			width: 25px;
-			float:left;
-		}
-		h1{
-			float:left;
-			font-size:1rem;
-			font-family: 'ubunturegular';
-			vertical-align:baseline;
-			margin:0;
-			margin-top:13px;
-		}
-
-
-	}
-}
-#main{
-	background-colour: black
-}
-.top-bar-anchor
-{
-  font-family: 'ubunturegular';
-  font-size: 1.3rem;
-}
 
 .user-signup-form{
 	margin-bottom:15px;
