@@ -1,0 +1,38 @@
+// Navigation bar styles
+
+@import 'fonts/ubuntu';
+
+//forceing a white color for the links
+.estate-logo{
+	color:white !important;
+	#estate-logo-a{
+		color:white;
+	}
+// getting the site title and img to look nice and be small	
+	.top-bar-left, .top-bar-title{
+		.logo{
+			width: 25px;
+			float:left;
+		}
+		h1{
+			float:left;
+			font-size:1rem;
+			font-family: 'ubunturegular';
+			vertical-align:baseline;
+			margin:0;
+			margin-top:13px;
+		}
+
+
+	}
+}
+// setting the nav bar's background
+#main{
+	background-colour: black
+}
+// setting the link tags font and size
+.top-bar-anchor
+{
+	font-family: 'ubunturegular';
+	font-size: 1.3rem;
+}
