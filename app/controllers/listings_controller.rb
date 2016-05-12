@@ -4,13 +4,15 @@ class ListingsController < ApplicationController
 
   #creating a new listing object
   def new
-    @listing = Listing.new
-    authorize @listing
+    @listings = Listing.new
+    @user = current_user
+    authorize @user
   end
 
   #method add listing object to database
   def create
-    @listing = Listing.new(listing_params)
+    @listings = Listing.new(listing_params)
+    @listings.user_id = current_user.id if current_user
     respond_to do |format|
       if @listings.save
         format.html{ redirect_to @listings, notice: "Listing #{@listings.title} was successfully created."}
@@ -27,8 +29,9 @@ class ListingsController < ApplicationController
         #render 'new'
       end
     end
-    authorize @listing
 
+    @user = current_user
+    authorize @user
   end
 
   def update
@@ -38,7 +41,6 @@ class ListingsController < ApplicationController
   def edit
     @listing = Listing.find_by(params[:user_id])
     authorize @listing
-
   end
 
   def destroy
@@ -64,6 +66,6 @@ class ListingsController < ApplicationController
   protected
   #using strong parameters
   def listing_params
-    params.require(:listing).permit(:title, :suburbID, :street, :unit, :price, :bedroom, :bathroom, :carports, :land_size, :description, :typeID, :userID, :listingsID)
+    params.require(:listing).permit(:title, :suburbID, :street, :unit, :price, :bedroom, :bathroom, :carports, :land_size, :description, :typeID, :user_id, :listingsID)
   end
 end
