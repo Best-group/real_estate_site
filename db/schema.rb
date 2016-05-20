@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20160510063106) do
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "listingID",                  null: false
+    t.integer  "listing_id",                 null: false
     t.integer  "order",                      null: false
     t.string   "image_link",     limit: 100, null: false
     t.string   "thumbnail_link", limit: 100, null: false
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20160510063106) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.integer  "user_id"
+    t.string   "pictures"
     t.index ["user_id"], name: "index_listings_on_user_id", using: :btree
   end
 

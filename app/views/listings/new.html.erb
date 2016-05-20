@@ -6,7 +6,7 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for @listings do |f| %>
+    <%= form_for @listings, html: { multipart: true } do |f| %>
         <% if @listings.errors.any? %>
             <div class="error_explantion">
               <h2><%= pluralize(@listings.errors.count, "error") %></h2>
@@ -17,7 +17,6 @@
               </ul>
             </div>
         <% end %>
-        <%= f.hidden_field :user_id, :value => current_user.id.to_s %>
         Title: <%= f.text_field :title %>
         Description: <%= f.text_field :description %>
         Unit: <%= f.text_field :unit %>
@@ -28,6 +27,21 @@
         Bathroom: <%= f.text_field :bathroom %>
         Carports: <%= f.text_field :carports %>
         Land Size: <%= f.text_field :land_size %>
+
+
+<%#        <% f.fields_for :images do |builder| %>
+<%#            <% if builder.object.new_record? %>
+<%#                <p>
+<%#                    <%= builder.label :image_link, "Image File" %>
+<%#                    <%= builder.file_field :image_link %>
+<%#                </p>
+<%#            <% end %>
+<%#        <% end %>
+
+        Picture: <%= f.file_field :image_link %>
+        <%#Picture 2: <%= f.file_field :image_link %>
+        <%#Picture 3: <%= f.file_field :image_link %>
+        <%#Picture 4: <%= f.file_field :image_link %>
 
         <%= f.submit "Submit" %>
 

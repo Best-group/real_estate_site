@@ -43,6 +43,7 @@ GEM
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
+    bcrypt (3.1.11)
     bcrypt (3.1.11-x86-mingw32)
     builder (3.2.2)
     byebug (8.2.5)
@@ -94,8 +95,11 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.12.0)
+    mysql2 (0.4.4)
     mysql2 (0.4.4-x86-mingw32)
     nio4r (1.2.1)
+    nokogiri (1.6.7.2)
+      mini_portile2 (~> 2.0.0.rc2)
     nokogiri (1.6.7.2-x86-mingw32)
       mini_portile2 (~> 2.0.0.rc2)
     options (2.3.2)
@@ -194,6 +198,7 @@ GEM
     websocket-extensions (0.1.2)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES
@@ -222,4 +227,4 @@ DEPENDENCIES
   web-console (~> 3.0)
 
 BUNDLED WITH
-   1.11.2
+   1.12.0.pre.1
